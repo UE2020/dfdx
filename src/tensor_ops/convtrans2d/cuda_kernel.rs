@@ -38,6 +38,7 @@ impl HasCudaKernel<f32> for Cuda {
     ];
 }
 
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64> for Cuda {
     const MOD: &'static str = "convtrans2d_f64";
     const FNS: &'static [&'static str] = &[

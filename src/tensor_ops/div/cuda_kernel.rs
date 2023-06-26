@@ -13,6 +13,7 @@ const BINARY_PTX: &str = include_str!(concat!(env!("OUT_DIR"), "/binary_div.ptx"
 #[cfg(feature = "f16")]
 cuda_unary!(const_df() Scalar<half::f16>, half::f16, SCALAR_PTX, "sdiv_fwd_f16", "sdiv_bwd_f16");
 cuda_unary!(const_df() Scalar<f32>, f32, SCALAR_PTX, "sdiv_fwd_f32", "sdiv_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(const_df() Scalar<f64>, f64, SCALAR_PTX, "sdiv_fwd_f64", "sdiv_bwd_f64");
 #[cfg(feature = "f16")]
 cuda_binary!(
@@ -31,6 +32,7 @@ cuda_binary!(
     "bdiv_bwd_lhs_f32",
     "bdiv_bwd_rhs_f32"
 );
+#[cfg(feature = "cuda-f64")]
 cuda_binary!(
     Binary,
     f64,

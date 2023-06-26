@@ -8,4 +8,5 @@ const PTX: &str = include_str!(concat!(env!("OUT_DIR"), "/recip.ptx"));
 #[cfg(feature = "f16")]
 cuda_unary!(df(f(x)) RecipKernelOp, half::f16, PTX, "recip_fwd_f16", "recip_bwd_f16");
 cuda_unary!(df(f(x)) RecipKernelOp, f32, PTX, "recip_fwd_f32", "recip_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(df(f(x)) RecipKernelOp, f64, PTX, "recip_fwd_f64", "recip_bwd_f64");

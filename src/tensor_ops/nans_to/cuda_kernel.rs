@@ -17,4 +17,5 @@ cuda_unary!(
     "nans_to_bwd_f16"
 );
 cuda_unary!(NansTo<f32>, f32, PTX, "nans_to_fwd_f32", "nans_to_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(NansTo<f64>, f64, PTX, "nans_to_fwd_f64", "nans_to_bwd_f64");

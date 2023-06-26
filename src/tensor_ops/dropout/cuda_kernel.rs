@@ -28,6 +28,7 @@ impl HasCudaKernel<f32> for Cuda {
     const FNS: &'static [&'static str] = &["dropout_fwd_f32", "dropout_bwd_f32"];
 }
 
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64> for Cuda {
     const MOD: &'static str = "dropout_f64";
     const FNS: &'static [&'static str] = &["dropout_fwd_f64", "dropout_bwd_f64"];

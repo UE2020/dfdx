@@ -9,6 +9,7 @@ use std::borrow::Cow;
 #[cfg(feature = "f16")]
 unsafe impl cudarc::driver::DeviceRepr for super::PowfKernelOp<half::f16> {}
 unsafe impl cudarc::driver::DeviceRepr for super::PowfKernelOp<f32> {}
+#[cfg(feature = "cuda-f64")]
 unsafe impl cudarc::driver::DeviceRepr for super::PowfKernelOp<f64> {}
 
 const PTX: &str = include_str!(concat!(env!("OUT_DIR"), "/pow.ptx"));
@@ -22,6 +23,7 @@ cuda_unary!(
     "pow_bwd_f16"
 );
 cuda_unary!(PowfKernelOp<f32>, f32, PTX, "pow_fwd_f32", "pow_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(PowfKernelOp<f64>, f64, PTX, "pow_fwd_f64", "pow_bwd_f64");
 
 impl<E: Dtype> UnaryKernel<super::PowiKernelOp, E> for Cuda

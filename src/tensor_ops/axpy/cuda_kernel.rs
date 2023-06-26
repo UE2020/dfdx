@@ -17,6 +17,7 @@ impl HasCudaKernel<half::f16> for Cuda {
 impl HasCudaKernel<f32> for Cuda {
     const FN: &'static str = "axpy_f32";
 }
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64> for Cuda {
     const FN: &'static str = "axpy_f64";
 }

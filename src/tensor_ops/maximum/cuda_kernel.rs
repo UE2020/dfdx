@@ -22,6 +22,7 @@ cuda_binary!(
     "maximum_bwd_lhs_f32",
     "maximum_bwd_rhs_f32"
 );
+#[cfg(feature = "cuda-f64")]
 cuda_binary!(
     Max,
     f64,

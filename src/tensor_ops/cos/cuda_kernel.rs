@@ -13,4 +13,5 @@ cuda_unary!(
     "cos_bwd_f16"
 );
 cuda_unary!(super::CosKernelOp, f32, PTX, "cos_fwd_f32", "cos_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(super::CosKernelOp, f64, PTX, "cos_fwd_f64", "cos_bwd_f64");

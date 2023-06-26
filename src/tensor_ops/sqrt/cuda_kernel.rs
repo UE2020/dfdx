@@ -8,4 +8,5 @@ const PTX: &str = include_str!(concat!(env!("OUT_DIR"), "/sqrt.ptx"));
 #[cfg(feature = "f16")]
 cuda_unary!(df(f(x)) SqrtKernelOp, half::f16, PTX, "sqrt_fwd_f16", "sqrt_bwd_f16");
 cuda_unary!(df(f(x)) SqrtKernelOp, f32, PTX, "sqrt_fwd_f32", "sqrt_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(df(f(x)) SqrtKernelOp, f64, PTX, "sqrt_fwd_f64", "sqrt_bwd_f64");

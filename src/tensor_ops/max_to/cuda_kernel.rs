@@ -29,6 +29,7 @@ impl HasCudaKernel<f32> for Cuda {
     const FNS: &'static [&'static str] = &["max_to_fwd_f32", "max_to_bwd_f32", "fill_with_f32"];
 }
 
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64> for Cuda {
     const INIT: f64 = f64::NEG_INFINITY;
     const MOD: &'static str = "max_f64";

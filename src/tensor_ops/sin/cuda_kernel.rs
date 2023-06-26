@@ -13,4 +13,5 @@ cuda_unary!(
     "sin_bwd_f16"
 );
 cuda_unary!(super::SinKernelOp, f32, PTX, "sin_fwd_f32", "sin_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(super::SinKernelOp, f64, PTX, "sin_fwd_f64", "sin_bwd_f64");

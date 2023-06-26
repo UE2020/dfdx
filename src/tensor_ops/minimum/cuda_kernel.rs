@@ -22,6 +22,7 @@ cuda_binary!(
     "minimum_bwd_lhs_f32",
     "minimum_bwd_rhs_f32"
 );
+#[cfg(feature = "cuda-f64")]
 cuda_binary!(
     Min,
     f64,

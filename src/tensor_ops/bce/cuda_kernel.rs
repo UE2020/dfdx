@@ -22,6 +22,7 @@ cuda_binary!(
     "bce_bwd_lhs_f32",
     "bce_bwd_rhs_f32"
 );
+#[cfg(feature = "cuda-f64")]
 cuda_binary!(
     BCEKernelOp,
     f64,

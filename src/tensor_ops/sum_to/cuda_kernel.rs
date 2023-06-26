@@ -26,6 +26,7 @@ impl HasCudaKernel<f32> for Cuda {
     const FNS: &'static [&'static str] = &["sum_to_fwd_f32", "sum_to_bwd_f32"];
 }
 
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64> for Cuda {
     const MOD: &'static str = "sum_f64";
     const FNS: &'static [&'static str] = &["sum_to_fwd_f64", "sum_to_bwd_f64"];

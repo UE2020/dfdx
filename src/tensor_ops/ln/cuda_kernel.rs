@@ -13,4 +13,5 @@ cuda_unary!(
     "ln_bwd_f16"
 );
 cuda_unary!(super::LnKernelOp, f32, PTX_SRC, "ln_fwd_f32", "ln_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(super::LnKernelOp, f64, PTX_SRC, "ln_fwd_f64", "ln_bwd_f64");

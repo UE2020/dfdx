@@ -14,4 +14,5 @@ cuda_unary!(
     "square_bwd_f16"
 );
 cuda_unary!(SquareKernelOp, f32, PTX, "square_fwd_f32", "square_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(SquareKernelOp, f64, PTX, "square_fwd_f64", "square_bwd_f64");

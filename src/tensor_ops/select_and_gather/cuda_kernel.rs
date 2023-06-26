@@ -207,6 +207,7 @@ impl_cuda_kernels!(
     "select_fwd_f32",
     "select_bwd_f32"
 );
+#[cfg(feature = "cuda-f64")]
 impl_cuda_kernels!(
     f64,
     "gather_f64",

@@ -4,6 +4,7 @@ use crate::tensor_ops::cuda_kernels::cuda_unary;
 #[cfg(feature = "f16")]
 unsafe impl cudarc::driver::DeviceRepr for ClampKernelOp<half::f16> {}
 unsafe impl cudarc::driver::DeviceRepr for ClampKernelOp<f32> {}
+#[cfg(feature = "cuda-f64")]
 unsafe impl cudarc::driver::DeviceRepr for ClampKernelOp<f64> {}
 
 const P: &str = include_str!(concat!(env!("OUT_DIR"), "/clamp.ptx"));
@@ -17,4 +18,5 @@ cuda_unary!(
     "clamp_bwd_f16"
 );
 cuda_unary!(ClampKernelOp<f32>, f32, P, "clamp_fwd_f32", "clamp_bwd_f32");
+#[cfg(feature = "cuda-f64")]
 cuda_unary!(ClampKernelOp<f64>, f64, P, "clamp_fwd_f64", "clamp_bwd_f64");

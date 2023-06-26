@@ -19,6 +19,7 @@ impl HasCudaKernel<half::f16> for Cuda {
 impl HasCudaKernel<f32> for Cuda {
     const FNS: &'static [&'static str] = &["roll_fwd_f32", "roll_bwd_f32"];
 }
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64> for Cuda {
     const FNS: &'static [&'static str] = &["roll_fwd_f64", "roll_bwd_f64"];
 }

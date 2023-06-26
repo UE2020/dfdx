@@ -28,6 +28,7 @@ impl HasCudaKernel<f32> for Cuda {
     const FN: &'static str = "attention_reshape_f32";
 }
 
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64> for Cuda {
     const FN: &'static str = "attention_reshape_f64";
 }

@@ -36,6 +36,7 @@ impl HasCudaKernel<f32> for Cuda {
     const FNS: &'static [&'static str] = &["slice_fwd_f32", "slice_bwd_f32"];
 }
 
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64> for Cuda {
     const MOD: &'static str = "slice_f64";
     const FNS: &'static [&'static str] = &["slice_fwd_f64", "slice_bwd_f64"];

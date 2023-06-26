@@ -148,9 +148,15 @@ cmps!(GeKernelOp, f32, "ge_fwd_f32", "scalar_ge_fwd_f32");
 cmps!(LtKernelOp, f32, "lt_fwd_f32", "scalar_lt_fwd_f32");
 cmps!(LeKernelOp, f32, "le_fwd_f32", "scalar_le_fwd_f32");
 
+#[cfg(feature = "cuda-f64")]
 cmps!(EqKernelOp, f64, "eq_fwd_f64", "scalar_eq_fwd_f64");
+#[cfg(feature = "cuda-f64")]
 cmps!(NeKernelOp, f64, "ne_fwd_f64", "scalar_ne_fwd_f64");
+#[cfg(feature = "cuda-f64")]
 cmps!(GtKernelOp, f64, "gt_fwd_f64", "scalar_gt_fwd_f64");
+#[cfg(feature = "cuda-f64")]
 cmps!(GeKernelOp, f64, "ge_fwd_f64", "scalar_ge_fwd_f64");
+#[cfg(feature = "cuda-f64")]
 cmps!(LtKernelOp, f64, "lt_fwd_f64", "scalar_lt_fwd_f64");
+#[cfg(feature = "cuda-f64")]
 cmps!(LeKernelOp, f64, "le_fwd_f64", "scalar_le_fwd_f64");

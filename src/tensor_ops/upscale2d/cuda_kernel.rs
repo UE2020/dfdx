@@ -43,10 +43,12 @@ impl HasCudaKernel<f32, Bilinear> for Cuda {
     const FWD: &'static str = "bilinear_upscale2d_fwd_f32";
     const BWD: &'static str = "bilinear_upscale2d_bwd_f32";
 }
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64, NearestNeighbor> for Cuda {
     const FWD: &'static str = "nearest_upscale2d_fwd_f64";
     const BWD: &'static str = "nearest_upscale2d_bwd_f64";
 }
+#[cfg(feature = "cuda-f64")]
 impl HasCudaKernel<f64, Bilinear> for Cuda {
     const FWD: &'static str = "bilinear_upscale2d_fwd_f64";
     const BWD: &'static str = "bilinear_upscale2d_bwd_f64";
